@@ -9,11 +9,6 @@ import java.nio.file.StandardOpenOption;
 
 public class AdministradorDeArchivos {
 
-    public static boolean comprobarExistencia(String filePath){
-        Path rutaDeArchivo = Path.of(filePath);
-        return Files.exists(rutaDeArchivo);
-    }
-
     public static String leerArchivo(String filePath) {
         // File reading logic
 
