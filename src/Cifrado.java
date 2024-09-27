@@ -7,11 +7,10 @@ public class Cifrado {
     public static String encriptar(String text, int clave) { // Encryption logic
         StringBuilder textoCifrado = new StringBuilder();
         char [] toCipher = text.toCharArray();
-        int longitudAlfabeto = alfabeto.length();
         for (char c : toCipher){
             int indice = alfabeto.indexOf(c);
             if (alfabeto.contains(String.valueOf(c))){
-                int nuevaPosicion = (indice + clave) % longitudAlfabeto;
+                int nuevaPosicion = (indice + clave) % alfabeto.length();
                 textoCifrado.append(alfabeto.charAt(nuevaPosicion));
             }else{
                 textoCifrado.append(c);
@@ -19,7 +18,8 @@ public class Cifrado {
         }
         return textoCifrado.toString();
     }
-    public String desencriptar(String encryptedText, int shift) { // Decryption logic
-        return encriptar(encryptedText, alfabeto.length() - shift);
+    public static String desencriptar(String texto, int clave) { // Decryption logic
+        clave = clave % alfabeto.length();
+        return encriptar(texto, alfabeto.length() - clave);
     }
 }
