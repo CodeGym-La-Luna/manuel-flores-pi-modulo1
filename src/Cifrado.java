@@ -3,11 +3,6 @@ package src;
 public class Cifrado {
 
     private static final String alfabeto = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789ÁÉÍÓÚÜáéíóúü,;.:-_/(){}[]";
-//    public Cifrado(char[] alphabet) {
-//        this.alfabeto = alphabet;
-//    }
-
-
 
     public static String encriptar(String text, int clave) { // Encryption logic
         StringBuilder textoCifrado = new StringBuilder();
@@ -24,9 +19,7 @@ public class Cifrado {
         }
         return textoCifrado.toString();
     }
-    public String desencriptar(String encryptedText, int shift) {
-        // Decryption logic
-
+    public String desencriptar(String encryptedText, int shift) { // Decryption logic
         return encriptar(encryptedText, alfabeto.length() - shift);
     }
 }
