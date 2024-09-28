@@ -28,7 +28,7 @@ public class MenuPrincipal {
         int clave;
         if (eleccion == 1){
             System.out.println("\n\n\n***Eligió Cifrar Texto***");
-            System.out.println("Ingrese su texto a cifrar si aún no lo ha hecho en el archivo ubicado en:\n" + rutaTextoEntradaAbsoluta); //lakjfwñlekjfñlkwe Agregar ruta absoluta para el usuario
+            System.out.println("Ingrese su texto a cifrar si aún no lo ha hecho en el archivo ubicado en:\n" + rutaTextoEntradaAbsoluta);
             do {
                 System.out.println("\n\n\nIngrese la clave para cifrar el texto:");
                 System.out.println("Debe ser un numero desde 1 hasta 88");
@@ -41,7 +41,7 @@ public class MenuPrincipal {
             AdministradorDeArchivos.escribirArchivo(textoEncriptado, rutaTextoSalida); //Escribe el texto encriptado en txtSalida
         } else {
             System.out.println("***Eligió Descifrar Texto***");
-            System.out.println("Ingrese su texto a descifrar si aún no lo ha hecho en el archivo ubicado en:\n" + rutaTextoEntradaAbsoluta); //lakjfwñlekjfñlkwe Agregar ruta absoluta para el usuario
+            System.out.println("Ingrese su texto a descifrar si aún no lo ha hecho en el archivo ubicado en:\n" + rutaTextoEntradaAbsoluta);
             do {
                 System.out.println("\n\n\nIngrese la clave para descifrar el texto:");
                 clave = sc.nextInt();
