@@ -2,7 +2,7 @@ package src;
 
 public class Cifrado {
 
-    private static final String alfabeto = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789ÁÉÍÓÚÜáéíóúü,;.:-_/(){}[]";
+    public static final String alfabeto = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789ÁÉÍÓÚÜáéíóúü,;.:-_/(){}[]";
 
     public static String encriptar(String text, int clave) { // Encryption logic
         StringBuilder textoCifrado = new StringBuilder();

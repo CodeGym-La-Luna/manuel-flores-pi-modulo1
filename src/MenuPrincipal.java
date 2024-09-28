@@ -6,6 +6,8 @@ import java.nio.file.Path;
 import java.util.Scanner;
 
 public class MenuPrincipal {
+    private static int clave;
+
     public static void main(String[] args) throws IOException {// Logic for selecting the operating mode, calling the appropriate methods
         int eleccion = 0;
         String rutaTextoEntrada = "src/resources/textoEntrada.txt";
@@ -27,8 +29,14 @@ public class MenuPrincipal {
         if (eleccion == 1){
             System.out.println("\n\n\n***Eligió Cifrar Texto***");
             System.out.println("Ingrese su texto a cifrar si aún no lo ha hecho en el archivo ubicado en:\n" + rutaTextoEntradaAbsoluta); //lakjfwñlekjfñlkwe Agregar ruta absoluta para el usuario
-            System.out.println("\n\n\nIngrese la clave para cifrar el texto:");
-            int clave = sc.nextInt();
+
+
+            do {
+                System.out.println("\n\n\nIngrese la clave para cifrar el texto:");
+                System.out.println("Debe ser un numero desde 1 hasta 88");
+                clave = sc.nextInt();
+                if (Validador.claveValida(clave, Cifrado.alfabeto) == false){System.out.println("Clave inválida\n");}
+            } while (Validador.claveValida(clave, Cifrado.alfabeto) == false);
             System.out.println("\n¡Texto cifrado con éxito! Archivo de texto guardado en:\n" + rutaTextoSalidaAbsoluta);
             if (Validador.comprobarExistencia(rutaTextoSalida)){Files.delete(Path.of(rutaTextoSalida));}
             String textoEncriptado = Cifrado.encriptar(AdministradorDeArchivos.leerArchivo(rutaTextoEntrada), clave);
